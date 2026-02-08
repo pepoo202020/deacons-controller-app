@@ -49,5 +49,8 @@
   "viewAll": "View all",
   "to": "To",
   "attendance": "Attendance",
-  "attendanceCheckIn": "Attendance check-in"
+  "attendanceCheckIn": "Attendance check-in",
+  "edit": "Edit",
+  "delete": "Delete",
+  "dashboard.overview.attendanceWithinLast30Days": "Attendance within the last 30 days"
 }

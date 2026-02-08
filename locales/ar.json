@@ -49,5 +49,8 @@
   "viewAll": "عرض الكل",
   "to": "إلى",
   "attendance": "الحضور",
-  "attendanceCheckIn": "تسجيل الحضور"
+  "attendanceCheckIn": "تسجيل الحضور",
+  "edit": "تعديل",
+  "delete": "حذف",
+  "dashboard.overview.attendanceWithinLast30Days": "الحضور خلال ال 30 يوم الماضية"
 }

@@ -13,6 +13,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+
+const actionsData = (t: (key: keyof typeof en) => string) => {
+  return [
+    { label: t("edit"), icon: "edit" },
+    { label: t("delete"), icon: "delete" },
+  ];
+};
 
 interface INextEventCardProps {
   event: INextEventData;
@@ -39,7 +47,9 @@ export default function NextEventCard({
           <PopoverTrigger className="cursor-pointer text-blue-500 bg-transparent border-none p-0 outline-none">
             <IoMdMore size={25} />
           </PopoverTrigger>
-          <PopoverContent>saf</PopoverContent>
+          <PopoverContent align="end" className="w-25 p-0">
+            <ActionsPopoverContent t={t} />
+          </PopoverContent>
         </Popover>
       </div>
       <div className="flex flex-col items-start justify-center">
@@ -73,3 +83,26 @@ export default function NextEventCard({
     </div>
   );
 }
+
+const ActionsPopoverContent = ({
+  t,
+}: {
+  t: (key: keyof typeof en) => string;
+}) => {
+  return (
+    <div className="flex flex-col items-start justify-center w-full p-0">
+      {actionsData(t).map((action) => (
+        <div
+          key={action.label}
+          className={cn(
+            "flex items-center gap-1 text-sm cursor-pointer hover:bg-gray-100 px-2 py-2 rounded w-full",
+            action.label === t("delete") && "text-red-500",
+            action.label === t("edit") && "text-gray-500",
+          )}
+        >
+          <span>{action.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
